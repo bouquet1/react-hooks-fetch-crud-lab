@@ -15,16 +15,21 @@ function App() {
       }); //set qs to qData and then log qData so we can verify it's working
   }, []);
 
+  function onAddQuestion(newQuestion) {
+    setQuestions([...questions, newQuestion]);
+  }
+
   return (
     <main>
       <AdminNavBar onChangePage={setPage} />
-      {page === "Form" ? <QuestionForm /> : <QuestionList questions={questions} />}
+      {page === "Form" ? <QuestionForm onAddQuestion={onAddQuestion} /> : <QuestionList questions={questions} />}
     </main>
   );
 }
 
 export default App;
 
+//
 /**
  1.first, we created questions state to GET/questions in question list.
  2.useEffect for fetch request to get questions
@@ -32,4 +37,9 @@ export default App;
  3. we gonna send qData to QuestionList Comp as a prop questions={questions} 
  4.next we gonna work @ QuestionList Comp 
  5.now we know our code works let's get rid of console.log("questionData ", questions) it is not professional to have them in your code. Validate and delete.
+
+*  We created the function (onAddQuestion) and put it in JSX as a prop for QuestionForm. We passed the prop to the QuestionForm.
+* 
+
+
  */

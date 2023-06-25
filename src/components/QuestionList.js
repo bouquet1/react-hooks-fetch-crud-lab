@@ -2,6 +2,7 @@ import React from "react";
 import QuestionItem from "./QuestionItem";
 
 function QuestionList({ questions }) {
+  console.log("Questions in question list ", questions);
   const questionMap = questions.map((question) => <QuestionItem key={question.id} question={question} />);
 
   return (
