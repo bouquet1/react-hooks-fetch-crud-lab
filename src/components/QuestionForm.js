@@ -31,7 +31,7 @@ function QuestionForm({ onAddQuestion }) {
       "correctIndex": 1
     }
      */
-    const formDataObject = {
+    const formDataObjectRevised = {
       prompt: formData.prompt,
       answers: [formData.answer1, formData.answer2, formData.answer3, formData.answer4],
       correctIndex: formData.correctIndex,
@@ -40,7 +40,7 @@ function QuestionForm({ onAddQuestion }) {
     fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
+      body: JSON.stringify(formDataObjectRevised),
       //we need to turn it into valid JSON data
     })
       .then((r) => r.json())
@@ -120,6 +120,21 @@ export default QuestionForm;
 
   * T uncommented the fetch() to work on only formData. 
   
-  *
+  * modified formData is below
+
+      const formDataObjectRevised = {
+          prompt: formData.prompt,
+          answers: [
+          formData.answer1,
+          formData.answer2,
+          formData.answer3,
+          formData.answer4
+          ],
+          correctIndex: formData.correctIndex,
+        }
+
+  then we changed the body of our fetch POST request:      
+  body: JSON.stringify(formDataObjectRevised),
+
 
  */

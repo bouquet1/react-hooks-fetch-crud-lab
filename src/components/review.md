@@ -127,3 +127,17 @@ fetchQuestions();
             }
 
             modified formData is below
+
+            const formDataObjectRevised = {
+                prompt: formData.prompt,
+                answers: [
+                    formData.answer1,
+                    formData.answer2,
+                    formData.answer3,
+                    formData.answer4
+                    ],
+                correctIndex: formData.correctIndex,
+            }
+
+            then we changed the body of our fetch POST request:
+            body: JSON.stringify(formDataObjectRevised),
