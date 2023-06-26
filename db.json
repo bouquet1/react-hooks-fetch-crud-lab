@@ -65,17 +65,6 @@
         "controlled"
       ],
       "correctIndex": 1
-    },
-    {
-      "prompt": "knock knock ",
-      "answers": [
-        "apple",
-        "orange",
-        "banana ",
-        "kiwi "
-      ],
-      "correctIndex": "1",
-      "id": 7
     }
   ]
 }

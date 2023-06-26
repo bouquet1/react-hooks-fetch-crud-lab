@@ -141,3 +141,29 @@ fetchQuestions();
 
             then we changed the body of our fetch POST request:
             body: JSON.stringify(formDataObjectRevised),
+
+    * Now, we'll work on DELETE fetch request to delete the question from the list by updating state and should be deleted from the server. (time stamp 1:20)
+
+    * Video burdan sonra hizli bir de T'nin yaptigi calismiyor gibi. Study buddy ile yaptim. Ne yaptim yaziyim adim adim. ilk olarak App e gittim ve DELETE fetch i yazdim.
+
+### App
+
+    * created new function onDeleteQuestion that takes the 'id' of the question to be deleted as a parameter.Inside it, used fetch to send DELETE req to the server. URL:http://localhost:4000/questions/{id}. {id} is the id of the question to be deleted.
+
+    * After the DELETE request is successful, updated the questions state by filtering out the deleted question from the current questions array. (/then)
+
+    * Passed the onDeleteQuestion function as a prop to the QuestionList component.
+
+### QuestionList
+
+    * onDeleteQuestion prop is added.
+
+    * The key prop is set earlier to the question.id to ensure a unique identifier for each item.
+
+    * onDeleteQuestion function is passed as props to the QuestionItem component along with the question object.
+
+### QuestionItem
+
+    * onClick event listener handleDelete function is added, which is called when the "Delete Question" button is clicked.
+
+    * handleDelete function is created and the the question id is passed
